@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2022_02_02_223733) do
-=======
-ActiveRecord::Schema.define(version: 2022_02_02_015259) do
->>>>>>> d39b555d6a1e9a14e90e7f35c5221e7517f92d5a
+ActiveRecord::Schema.define(version: 2022_02_03_022505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +24,8 @@ ActiveRecord::Schema.define(version: 2022_02_02_015259) do
     t.integer "reach"
     t.string "stance"
     t.boolean "active"
+    t.bigint "organization_id"
+    t.index ["organization_id"], name: "index_fighters_on_organization_id"
   end
 
   create_table "hotels", force: :cascade do |t|
@@ -57,5 +55,6 @@ ActiveRecord::Schema.define(version: 2022_02_02_015259) do
     t.index ["hotel_id"], name: "index_suites_on_hotel_id"
   end
 
+  add_foreign_key "fighters", "organizations"
   add_foreign_key "suites", "hotels"
 end
