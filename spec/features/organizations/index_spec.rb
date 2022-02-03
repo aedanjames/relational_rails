@@ -12,4 +12,10 @@ RSpec.describe 'Organizations Index' do
         expect(page).to have_content(@organization.name)
     end 
 
+    it 'displays organization names as links that can navigate to show path' do
+        visit "/organizations"
+        click_on @organization.name 
+        expect(current_path).to eq("/organization/#{@organization.id}")
+    end
+
 end 
