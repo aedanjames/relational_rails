@@ -6,11 +6,14 @@ require 'rails_helper'
 # - data from each column that is on the parent table
 # When link from ‘/parents’ is clicked, navigate to ‘/parents/:id
 
+# Need to add test to turn each organization name in '/organizations into a link to "/organizations/#:id"
+
+# does this test need to be broken up to separate attributes or is lumping together all attributes fine?
 RSpec.describe 'the organizations #show page' do
     it 'displays the organization attributes' do 
         organization = Organization.create!(name: "UFC", year_founded: 1995, president: "Dana White", international: true)
         # test that route has path and points to controller action
-        visit "/organizations/#{organization.id}"
+        visit "/organization/#{organization.id}"
         # Now test for functionality
         expect(page).to have_content(organization.name)
         expect(page).to have_content(organization.id)
