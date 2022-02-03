@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/beckynisttahuz/turing/relational_rails/config/environment.rb": {
+      "/Users/aedanyturralde/turing/2module/projects/relational_rails/config/environment.rb": {
         "lines": [
           null,
           1,
@@ -10,7 +10,7 @@
           1
         ]
       },
-      "/Users/beckynisttahuz/turing/relational_rails/config/application.rb": {
+      "/Users/aedanyturralde/turing/2module/projects/relational_rails/config/application.rb": {
         "lines": [
           1,
           null,
@@ -47,7 +47,7 @@
           null
         ]
       },
-      "/Users/beckynisttahuz/turing/relational_rails/config/boot.rb": {
+      "/Users/aedanyturralde/turing/2module/projects/relational_rails/config/boot.rb": {
         "lines": [
           1,
           null,
@@ -55,7 +55,7 @@
           1
         ]
       },
-      "/Users/beckynisttahuz/turing/relational_rails/config/environments/test.rb": {
+      "/Users/aedanyturralde/turing/2module/projects/relational_rails/config/environments/test.rb": {
         "lines": [
           1,
           null,
@@ -105,7 +105,7 @@
           null
         ]
       },
-      "/Users/beckynisttahuz/turing/relational_rails/config/initializers/application_controller_renderer.rb": {
+      "/Users/aedanyturralde/turing/2module/projects/relational_rails/config/initializers/application_controller_renderer.rb": {
         "lines": [
           null,
           null,
@@ -117,7 +117,7 @@
           null
         ]
       },
-      "/Users/beckynisttahuz/turing/relational_rails/config/initializers/assets.rb": {
+      "/Users/aedanyturralde/turing/2module/projects/relational_rails/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -135,7 +135,7 @@
           null
         ]
       },
-      "/Users/beckynisttahuz/turing/relational_rails/config/initializers/backtrace_silencers.rb": {
+      "/Users/aedanyturralde/turing/2module/projects/relational_rails/config/initializers/backtrace_silencers.rb": {
         "lines": [
           null,
           null,
@@ -146,7 +146,7 @@
           null
         ]
       },
-      "/Users/beckynisttahuz/turing/relational_rails/config/initializers/content_security_policy.rb": {
+      "/Users/aedanyturralde/turing/2module/projects/relational_rails/config/initializers/content_security_policy.rb": {
         "lines": [
           null,
           null,
@@ -175,7 +175,7 @@
           null
         ]
       },
-      "/Users/beckynisttahuz/turing/relational_rails/config/initializers/cookies_serializer.rb": {
+      "/Users/aedanyturralde/turing/2module/projects/relational_rails/config/initializers/cookies_serializer.rb": {
         "lines": [
           null,
           null,
@@ -184,7 +184,7 @@
           1
         ]
       },
-      "/Users/beckynisttahuz/turing/relational_rails/config/initializers/filter_parameter_logging.rb": {
+      "/Users/aedanyturralde/turing/2module/projects/relational_rails/config/initializers/filter_parameter_logging.rb": {
         "lines": [
           null,
           null,
@@ -192,7 +192,7 @@
           1
         ]
       },
-      "/Users/beckynisttahuz/turing/relational_rails/config/initializers/inflections.rb": {
+      "/Users/aedanyturralde/turing/2module/projects/relational_rails/config/initializers/inflections.rb": {
         "lines": [
           null,
           null,
@@ -212,7 +212,7 @@
           null
         ]
       },
-      "/Users/beckynisttahuz/turing/relational_rails/config/initializers/mime_types.rb": {
+      "/Users/aedanyturralde/turing/2module/projects/relational_rails/config/initializers/mime_types.rb": {
         "lines": [
           null,
           null,
@@ -220,7 +220,7 @@
           null
         ]
       },
-      "/Users/beckynisttahuz/turing/relational_rails/config/initializers/wrap_parameters.rb": {
+      "/Users/aedanyturralde/turing/2module/projects/relational_rails/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
           null,
@@ -238,7 +238,7 @@
           null
         ]
       },
-      "/Users/beckynisttahuz/turing/relational_rails/config/routes.rb": {
+      "/Users/aedanyturralde/turing/2module/projects/relational_rails/config/routes.rb": {
         "lines": [
           1,
           null,
@@ -250,27 +250,27 @@
           null
         ]
       },
-      "/Users/beckynisttahuz/turing/relational_rails/app/helpers/application_helper.rb": {
+      "/Users/aedanyturralde/turing/2module/projects/relational_rails/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/beckynisttahuz/turing/relational_rails/app/models/hotel.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/beckynisttahuz/turing/relational_rails/app/models/application_record.rb": {
+      "/Users/aedanyturralde/turing/2module/projects/relational_rails/app/models/organization.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/beckynisttahuz/turing/relational_rails/app/models/suite.rb": {
+      "/Users/aedanyturralde/turing/2module/projects/relational_rails/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/aedanyturralde/turing/2module/projects/relational_rails/app/models/fighter.rb": {
         "lines": [
           1,
           1,
@@ -278,6 +278,6 @@
         ]
       }
     },
-    "timestamp": 1643850309
+    "timestamp": 1643857036
   }
 }
