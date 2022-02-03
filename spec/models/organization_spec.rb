@@ -13,6 +13,8 @@ RSpec.describe Organization, type: :model do
     end 
     
     describe 'relationship' do 
+        it {should have_many :fighters}
+
         it 'has many fighters' do 
         organization = Organization.create!(name: "UFC", year_founded: 1995, president: "Dana White", international: true)
         fighter_1 = organization.fighters.create!(name: "Becky", height: 14.0, weight:120.0, reach: 36, stance: "orthodox", active: true)
