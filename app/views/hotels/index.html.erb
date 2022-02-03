@@ -1,4 +1,4 @@
 <h1>All hotels</h1>
 <% @hotels.each do |hotel| %>
-    <h3><%= hotel.name %></h3>
+    <h3><%= link_to hotel.name, "/hotel/#{hotel.id}"%></h3>
 <% end %>
