@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   get '/', to: 'welcome#index'
   get '/hotels', to:'hotels#index'
   get '/suites', to: 'suites#index'
-  get '/mma_organizations', to:'organizations#index'
+  get '/organizations', to:'organizations#index'
   get '/fighters', to:'fighters#index'
 end
