@@ -1,5 +1,8 @@
 <h1>All Organizations</h1>
 
 <% @organizations.each do |organization| %>
-    <h3><%= organization.name %></h3>
+<!-- button below -->
+    <h3><%= link_to organization.name, "/organization/#{organization.id}" %></h3>
+    <!-- without button -->
+     <!-- <h3><%= organization.name %></h3> -->
 <% end %>

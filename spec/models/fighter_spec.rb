@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Fighter, type: :model do 
     describe 'instance methods' do 
+
         it 'has attributes' do 
             organization = Organization.create!(name: "UFC", year_founded: 1995, president: "Dana White", international: true)
             fighter = organization.fighters.create!(name: "Becky", height: 14.0, weight:120.0, reach: 36, stance: "orthodox", active: true)
@@ -14,6 +15,8 @@ RSpec.describe Fighter, type: :model do
         end 
     end 
         describe 'relationship' do 
+        it {should belong_to :organization}
+
         it 'belongs to an organization' do 
             organization = Organization.create!(name: "UFC", year_founded: 1995, president: "Dana White", international: true)
             fighter = organization.fighters.create!(name: "Becky", height: 14.0, weight:120.0, reach: 36, stance: "orthodox", active: true)
