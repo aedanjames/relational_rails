@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_02_015259) do
+ActiveRecord::Schema.define(version: 2022_02_03_022505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2022_02_02_015259) do
     t.integer "reach"
     t.string "stance"
     t.boolean "active"
+    t.bigint "organization_id"
+    t.index ["organization_id"], name: "index_fighters_on_organization_id"
   end
 
   create_table "hotels", force: :cascade do |t|
@@ -43,4 +45,16 @@ ActiveRecord::Schema.define(version: 2022_02_02_015259) do
     t.boolean "international"
   end
 
+  create_table "suites", force: :cascade do |t|
+    t.string "name"
+    t.boolean "clean"
+    t.integer "number_of_beds"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.bigint "hotel_id"
+    t.index ["hotel_id"], name: "index_suites_on_hotel_id"
+  end
+
+  add_foreign_key "fighters", "organizations"
+  add_foreign_key "suites", "hotels"
 end
