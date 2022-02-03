@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   get '/suites', to: 'suites#index'
   get '/organizations', to:'organizations#index'
   get '/fighters', to:'fighters#index'
-  get '/organizations/:id', to:'organizations#show'
+  get '/organization/:id', to:'organizations#show'
 end
