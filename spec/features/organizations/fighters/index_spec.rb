@@ -3,7 +3,7 @@ require 'rails_helper'
 
 # As a visitor
 # When I visit '/organization/:id/fighters'
-# Then I see each fighter that is associated with that organizatioin with each fighter's attributes:
+# Then I see each fighter that is associated with that organization with each fighter's attributes:
 
 RSpec.describe "Organization Fighter's Index" do 
     before :each do 
@@ -15,7 +15,7 @@ RSpec.describe "Organization Fighter's Index" do
 
     it 'displays each fighter that belongs to an organization' do 
         visit "organization/#{@organization_1.id}/fighters" 
-
+        save_and_open_page
         expect(page).to have_content(@fighter_1.name)
         expect(page).to have_content(@fighter_2.name)
     end 
