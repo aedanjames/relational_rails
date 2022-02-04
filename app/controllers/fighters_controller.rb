@@ -2,4 +2,8 @@ class FightersController < ApplicationController
     def index
         @fighters = Fighter.all 
     end
-end     
+
+    def show
+        @fighter = Fighter.find(params[:id])
+    end 
+end
