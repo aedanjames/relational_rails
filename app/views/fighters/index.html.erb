@@ -2,4 +2,9 @@
 
 <% @fighters.each do |fighter| %>
     <h3><%= fighter.name %></h3>
+    <p>Height: <%= fighter.height %>
+    <p>Weight: <%= fighter.weight %>
+    <p>Reach: <%= fighter.reach %>
+    <p>Stance: <%= fighter.stance %>
+    <p>Actively fighting: <%= fighter.active %>
 <% end %>
