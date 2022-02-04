@@ -247,6 +247,7 @@
           1,
           1,
           1,
+          1,
           null
         ]
       },
@@ -256,8 +257,17 @@
           null
         ]
       },
-      "/Users/aedanyturralde/turing/2module/projects/relational_rails/app/models/organization.rb": {
+      "/Users/aedanyturralde/turing/2module/projects/relational_rails/app/models/fighter.rb": {
         "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
           1,
           1,
           null
@@ -270,14 +280,18 @@
           null
         ]
       },
-      "/Users/aedanyturralde/turing/2module/projects/relational_rails/app/models/fighter.rb": {
+      "/Users/aedanyturralde/turing/2module/projects/relational_rails/app/models/organization.rb": {
         "lines": [
+          1,
+          1,
+          1,
+          1,
           1,
           1,
           null
         ]
       }
     },
-    "timestamp": 1643857036
+    "timestamp": 1643928428
   }
 }
