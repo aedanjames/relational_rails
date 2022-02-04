@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get '/fighters', to:'fighters#index'
   get '/organization/:id', to:'organizations#show'
   get 'hotel/:id', to:'hotels#show'
+  get 'fighter/:id', to:'fighters#show'
 end
