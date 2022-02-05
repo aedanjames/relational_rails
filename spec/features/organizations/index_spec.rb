@@ -30,7 +30,7 @@ RSpec.describe 'Organizations Index' do
         expect(@organization_2.name).to appear_before(@organization_1.name)
     end 
 
-    it 'displays organization names as links that can navigate to show path' do
+    it 'has a link that takes the user to fighters index' do
         visit "/organizations"
         click_on "Fighters"
         expect(current_path).to eq("/fighters")
