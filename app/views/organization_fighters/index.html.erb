@@ -3,7 +3,7 @@
 <h2><%= @organization.name %></h2> 
 <% @fighters.each do |fighter| %> 
     <h3><%= fighter.name %> </h3>
-    <p><%= fighter.height %></p>
-    <p><%= fighter.weight %></p>
-    <p><%= fighter.reach %></p>
+    <p>Height: <%= fighter.height %> meters</p>
+    <p>Weight: <%= fighter.weight %> lbs</p>
+    <p>Reach: <%= fighter.reach %> inches</p>
     <% end %>
