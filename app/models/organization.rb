@@ -8,4 +8,8 @@ class Organization < ApplicationRecord
     def self.in_order
         Organization.order(created_at: :desc)
     end 
+
+    def count_fighters
+        Fighter.where(organization_id: self.id).count
+    end 
 end 
