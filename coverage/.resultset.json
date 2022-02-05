@@ -251,6 +251,7 @@
           1,
           1,
           1,
+          1,
           null
         ]
       },
@@ -288,13 +289,10 @@
           null
         ]
       },
-      "/Users/beckynisttahuz/turing/relational_rails/app/controllers/suites_controller.rb": {
+      "/Users/beckynisttahuz/turing/relational_rails/app/controllers/hotel_suites_controller.rb": {
         "lines": [
           1,
           1,
-          0,
-          null,
-          null,
           1,
           1,
           null,
@@ -308,6 +306,6 @@
         ]
       }
     },
-    "timestamp": 1643946328
+    "timestamp": 1644100945
   }
 }

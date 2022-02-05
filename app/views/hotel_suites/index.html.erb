@@ -1,0 +1,8 @@
+<h1> Hotel Suites </h1>
+
+<p><% @hotel.name%></p>
+<p><% @suites.each do |suite|%></p>
+<p><%= suite.name%><p/>
+<p><%= suite.clean%><p/>
+<p><%= suite.number_of_beds%><p/>
+  <%end%>
