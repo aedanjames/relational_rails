@@ -39,5 +39,4 @@ RSpec.describe 'the organizations #show page' do
         click_on "Fighters"
         expect(current_path).to eq("/fighters")
     end
-
 end 

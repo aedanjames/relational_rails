@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe 'Organizations Index' do 
     before :each do 
         @organization_1 = Organization.create!(name: "Punchy Punch", year_founded: 1995, president: "Dana White", international: true)
-        @organization_2 = Organization.create!(name: "Bellator", year_founded: 2002, president: "Scott Coker", international: true)
+        @organization_2 = Organization.create!(name: "Smellator", year_founded: 2002, president: "Scott Coker", international: true)
     end 
 
     it 'displays the name of each organization' do 
