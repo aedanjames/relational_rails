@@ -39,4 +39,12 @@ RSpec.describe 'the organizations #show page' do
         click_on "Fighters"
         expect(current_path).to eq("/fighters")
     end
+# As a visitor
+# When I visit a parent show page ('/organization/:id')
+# Then I see a link to take me to that organization's "organization/#{@organization.id}/fighters" page
+    it 'has a link that takes the user to that organizations fighters page' do
+        visit "/organization/#{@organization.id}"
+        click_on "List of fighters"
+        expect(current_path).to eq("/organization/#{@organization.id}/fighters")
+end
 end 

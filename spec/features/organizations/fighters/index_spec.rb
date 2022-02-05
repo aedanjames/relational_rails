@@ -15,7 +15,6 @@ RSpec.describe "Organization Fighter's Index" do
 
     it 'displays each fighter that belongs to an organization' do 
         visit "organization/#{@organization_1.id}/fighters" 
-        save_and_open_page
         expect(page).to have_content(@fighter_1.name)
         expect(page).to have_content(@fighter_2.name)
     end 
