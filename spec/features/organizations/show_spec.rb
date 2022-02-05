@@ -29,9 +29,15 @@ RSpec.describe 'the organizations #show page' do
 # When I visit a parent's show page
 # I see a count of the number of children associated with this parent
 
-    it 'displays a count of the number of fighters associated with this parent' do 
+    it 'displays a count of the number of fighters associated with this organization' do 
         visit "/organization/#{@organization.id}"
         expect(page).to have_content(@organization.count_fighters)
     end 
+
+    it 'has a link that takes the user to fighters index' do
+        visit "/organization/#{@organization.id}"
+        click_on "Fighters"
+        expect(current_path).to eq("/fighters")
+    end
 
 end 
