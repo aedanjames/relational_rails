@@ -6,3 +6,5 @@
 <p>president: <%= @organization.president %></p>
 <p>international?: <%= @organization.international %></p>
 <p>Number of Fighters: <%= @organization.count_fighters %></p>
+
+<%= link_to "List of fighters", "/organization/#{@organization.id}/fighters" %>
