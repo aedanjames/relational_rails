@@ -1,7 +1,9 @@
 <h1>All Organizations</h1>
-
-<% @organizations.each do |organization| %>
-    <% @organizations.in_order.each do |organization| %>
+<body>
+    
+<% @organizations.in_order.each do |organization| %>
     <h3><%= link_to organization.name, "/organization/#{organization.id}" %></h3>
     <p>Created at: <%= organization.created_at %></p>
 <% end %>
+
+</body>
