@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   get 'fighter/:id', to:'fighters#show'
   get '/suite/:id', to: 'suites#show'
   get '/hotel/:id/suites', to:'hotel_suites#index'
+  get '/hotels/new', to: 'hotels#new'
+  post '/hotels', to: 'hotels#create'
 end
