@@ -9,4 +9,13 @@ class OrganizationsController < ApplicationController
 
     def new
     end 
+    
+    def create
+        organization = Organization.create(organization_params)
+        redirect_to "/organizations/"
+    end 
+
+    def organization_params
+        params.permit(:name, :year_founded, :president, :international)
+    end 
 end 
