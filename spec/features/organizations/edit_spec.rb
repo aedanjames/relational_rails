@@ -19,7 +19,7 @@ RSpec.describe 'the organization edit' do
         expect(current_path).to eq("/organizations/#{organization.id}/edit")
     end 
 
-    it 'can successfully update an artist' do 
+    it 'can successfully update an organization' do 
         organization = Organization.create!(name: "Rollie Polli", year_founded: 194, president: "Bam Ba", international: true)
         visit "/organizations"
         expect(page).to have_content("Rollie Polli")
