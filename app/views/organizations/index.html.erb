@@ -4,4 +4,5 @@
     <h2><%= link_to organization.name, "/organizations/#{organization.id}" %><%= button_to "Edit #{organization.name}", "/organizations/#{organization.id}/edit", method: :get %></h2>
     <p>Created at: <%= organization.created_at %></p>
 <% end %>
+
 <%= link_to "New Organization", '/organizations/new' %>

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'hotel/:id', to:'hotels#show'
   get '/suite/:id', to: 'suites#show'
   get '/hotel/:id/suites', to:'hotel_suites#index'
-  
+
   patch '/organizations/:id', to: 'organizations#update'
   post '/organizations/', to: 'organizations#create'
   get '/organizations', to:'organizations#index'
