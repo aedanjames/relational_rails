@@ -5,11 +5,7 @@
     <p><%= form.text_field :year_founded %></p>
     <p><%= form.label :president %></p>
     <p><%= form.text_field :president %></p>
-
-    <div id="boolean">
-        <p><%= form.label :international %></p>
-        <p><%= form.select :international, options_for_select([true, false]) %></p>
-    </div>
-    
+    <p><%= form.label :international %></p>
+    <p><%= form.select :international, options_for_select([true, false]) %></p>
     <p><%= form.submit "Create Organization" %>
 <% end %>

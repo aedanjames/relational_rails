@@ -23,7 +23,7 @@ RSpec.describe 'the Organization creation' do
         fill_in('Name', with: "Invicta")
         fill_in('year_founded', with: "2009")
         fill_in('president', with: "Smelly Kelly")
-        fill_in('international', with: "true")
+        select "true", :from => "international"
         click_button("Create Organization")
         # expectation
         expect(current_path).to eq("/organizations/")
