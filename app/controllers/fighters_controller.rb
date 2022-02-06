@@ -7,6 +7,7 @@ class FightersController < ApplicationController
         @fighter = Fighter.find(params[:id])
     end 
 
-    def update 
+    def edit 
+        @fighter = Fighter.find(params[:id])
     end 
 end
