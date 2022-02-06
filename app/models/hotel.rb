@@ -3,4 +3,12 @@ class Hotel < ApplicationRecord
    validates_presence_of :name
    validates_presence_of :five_stars
    validates_presence_of :year_founded
+
+   def self.in_order
+     Hotel.order(created_at: :desc)
+   end
+
+   def suite_count
+     Suite.where(hotel_id: self.id).count
+   end
 end

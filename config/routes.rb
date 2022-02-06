@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   get 'hotel/:id', to:'hotels#show'
   get 'fighter/:id', to:'fighters#show'
   get '/suite/:id', to: 'suites#show'
-  get '/organization/:id/fighters', to: 'organization_fighters#index'
+  get '/hotel/:id/suites', to:'hotel_suites#index'
 end
