@@ -8,5 +8,5 @@ class Fighter < ApplicationRecord
     validates_presence_of :weight
     validates_presence_of :reach
     validates_presence_of :stance
-    validates_presence_of :active
+    # validates_presence_of :active
 end 
