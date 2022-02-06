@@ -16,9 +16,17 @@ class OrganizationsController < ApplicationController
     end 
 
     def edit 
-        @artist = Organization.find(params[:id])
+        @organization = Organization.find(params[:id])
     end 
 
+    def update
+        organization = Organization.find(params[:id])
+        organization.update(organization_params)
+        # redirect_to "/organizations/#{organization.id}"
+        redirect_to "/organizations/#{organization.id}"
+    end 
+
+private
     def organization_params
         params.permit(:name, :year_founded, :president, :international)
     end 
