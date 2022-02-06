@@ -16,4 +16,18 @@ RSpec.describe 'the Organization creation' do
         click_link("New Organization")
         expect(current_path).to eq("/organizations/new")
     end 
+
+    it 'can create a new organization' do 
+        # execution
+        visit '/organizations/new'
+        fill_in('Name', with: "Invicta")
+        fill_in('year_founded', with: "2009")
+        fill_in('president', with: "Smelly Kelly")
+        fill_in('international', with: "true")
+        click_button("Create Organization")
+        # expectation
+        expect(current_path).to eq("/organizations/")
+        expect(page).to have_content("Invicta")
+        expect(page).to have_content("Created at:")
+    end 
 end 
