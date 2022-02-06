@@ -27,9 +27,18 @@ RSpec.describe 'the hotel show page' do
 # When I visit a hotel's show page
 # I see a count of the number of suites associated with this hotel
 
-#This test passed however there was nothing included in view. We dont know why. 
+#This test passed however there was nothing included in view. We dont know why.
   it 'displays count of suites associated with hotel' do
     visit "/hotel/#{@hotel.id}"
     expect(page).to have_content(@hotel.suite_count)
+  end
+
+# As a visitor
+# When I visit a parent show page ('/hotel/:id')
+# Then I see a link to take me to that hotel's `Suites` page ('/hotel/:id/suites')
+  it 'has a link to take me to all the suites that hotel has' do
+    visit "/hotel/#{@hotel.id}"
+    click_on "All suites"
+    expect(current_path).to eq("/hotel/#{@hotel.id}/suites")
   end
 end
