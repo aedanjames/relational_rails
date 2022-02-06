@@ -4,3 +4,5 @@
 <p>Reach: <%= @fighter.reach %> inches</p>
 <p>Stance: <%= @fighter.stance %></p>
 <p>Actively fighting: <%= @fighter.active %></p>
+
+<%= link_to "Update #{@fighter.name}", "/fighters/#{@fighter.id}/edit" %>
