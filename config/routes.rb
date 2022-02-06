@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   get '/hotel/:id/suites', to:'hotel_suites#index'
   get '/organizations/new', to: 'organizations#new'
   post '/organizations/', to: 'organizations#create'
+  get '/organizations/:id/edit', to: 'organizations#edit'
 end

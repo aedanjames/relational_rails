@@ -15,6 +15,10 @@ class OrganizationsController < ApplicationController
         redirect_to "/organizations/"
     end 
 
+    def edit 
+        @artist = Organization.find(params[:id])
+    end 
+
     def organization_params
         params.permit(:name, :year_founded, :president, :international)
     end 
