@@ -18,3 +18,4 @@ RSpec.describe 'index of suites of hotel' do
      expect(page).to have_content(@suite_2.name)
      expect(page).to have_content(@suite_3.name)
   end
+end
