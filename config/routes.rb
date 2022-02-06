@@ -14,7 +14,9 @@ Rails.application.routes.draw do
   get '/organizations/new', to: 'organizations#new'
   get '/organizations/:id', to:'organizations#show'
   get '/organizations/:id/edit', to: 'organizations#edit'
+  
   get '/organizations/:id/fighters', to: 'organization_fighters#index'
+  get '/organizations/:id/fighters/new', to: 'organization_fighters#new'
   
   get '/fighters', to:'fighters#index'
   get 'fighter/:id', to:'fighters#show'

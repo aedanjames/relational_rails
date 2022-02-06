@@ -3,4 +3,7 @@ class OrganizationFightersController < ApplicationController
         @organization = Organization.find(params[:id])
         @fighters = @organization.fighters
     end 
+
+    def new
+    end 
 end 
