@@ -1,9 +1,9 @@
-<p>Name: <%=@hotel.name%></p>
+<h2><%=@hotel.name%> Hotel</h2>
 <p>Id: <%=@hotel.id%></p>
 <p>Year founded: <%=@hotel.year_founded%></p>
 <p>Created at: <%=@hotel.created_at%></p>
 <p>Updated at: <%=@hotel.updated_at%></p>
-<p>Is it five stars? <%=@hotel.five_stars%></p>
+<p>Five stars: <%=@hotel.five_stars%></p>
 <p>Number of suites: <%=@hotel.suite_count%></p>
 
 <p><%= link_to "All suites", "/hotel/#{@hotel.id}/suites"%></p>

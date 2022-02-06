@@ -1,4 +1,5 @@
 <h1>All hotels</h1>
+
 <% @hotels.in_order.each do |hotel| %>
     <h3><%= link_to hotel.name, "/hotel/#{hotel.id}"%></h3>
     <p> Created at: <%= hotel.created_at%></p>

@@ -1,7 +1,8 @@
 <h1>All Suites</h1>
-<% @suites.each do |suite| %>
-<p><%= suite.name %></p>
-<p><%= suite.clean %></p>
-<p><%= suite.number_of_beds %></p>
 
-  <% end %>
+<% @suites.each do |suite| %>
+<h3>Room #<%= suite.name %></h3>
+<p> It is clean: <%= suite.clean %></p>
+<p> Number of beds: <%= suite.number_of_beds %></p>
+
+<%end%>

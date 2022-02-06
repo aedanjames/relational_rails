@@ -17,4 +17,16 @@ RSpec.describe 'Hotels Index' do
     click_on @hotel.name
     expect(current_path).to eq("/hotel/#{@hotel.id}")
   end
+
+  # it 'displays the link at the top of the page' do
+  #   visit '/hotels'
+  #
+  #   expect(page). to have_link('Chef Index')
+  #     click_on('Chef Index')
+  #     expect(page).to have_current_path('/suites')
+  #     #visit "/chefs/#{@hotel.id}"
+  #     #expect(page).to have_link('Suites Index')
+  # end
+
+  
 end
