@@ -27,7 +27,8 @@ RSpec.describe 'the organization edit' do
         fill_in 'name', with: "Rollie Pollie"
         fill_in 'year_founded', with: "1994"
         fill_in 'president', with: "Bam Bam"
-        fill_in 'international', with: "true"
+        # capybara selecting true from international dropdown 
+        select "true", :from => "international"
         click_button "Update Organization"
         expect(current_path).to eq("/organizations/#{organization.id}")
         expect(page).to have_content("Rollie Pollie")
