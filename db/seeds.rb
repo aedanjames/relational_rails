@@ -4,7 +4,8 @@
 # Examples:
 Fighter.destroy_all
 Organization.destroy_all
-#
+Suite.destroy_all
+Hotel.destroy_all
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 ufc = Organization.create!(name: "UFC", year_founded: 1995, president: "Dana White", international: true)
@@ -15,7 +16,7 @@ carlos = ufc.fighters.create!(name: "Carlos Condit", height: 2.2, weight:170.0, 
 chandler = bellator.fighters.create!(name: "Michael Chandler", height: 1.7, weight:155.0, reach: 65, stance: "orthodox", active: true)
 venom = bellator.fighters.create!(name: "Michael Venom Page", height: 2.3, weight:165.0, reach: 70, stance: "southpaw", active: true)
 
-@hotel = Hotel.create!(name: 'Hilton', five_stars: true, year_founded: 1980)
+@hotel = Hotel.create!(name: 'Presidente', five_stars: true, year_founded: 1980)
 @suite_1 = Suite.create(name: '120', clean: true, number_of_beds: 4, hotel_id: @hotel.id)
 @suite_2 = Suite.create(name: '121', clean: true, number_of_beds: 2, hotel_id: @hotel.id)
 @suite_3 = Suite.create(name: '122', clean: true, number_of_beds: 1, hotel_id: @hotel.id)
