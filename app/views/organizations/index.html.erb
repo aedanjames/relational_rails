@@ -1,6 +1,8 @@
 <h1>All Organizations</h1>
 
 <% @organizations.in_order.each do |organization| %>
-    <h3><%= link_to organization.name, "/organization/#{organization.id}" %></h3>
+    <h2><%= link_to organization.name, "/organizations/#{organization.id}" %><%= button_to "Edit #{organization.name}", "/organizations/#{organization.id}/edit", method: :get %></h2>
     <p>Created at: <%= organization.created_at %></p>
 <% end %>
+
+<%= link_to "New Organization", '/organizations/new' %>

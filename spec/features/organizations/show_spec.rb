@@ -15,7 +15,7 @@ RSpec.describe 'the organizations #show page' do
     end
     it 'displays the organization attributes' do 
         # test that route has path and points to controller action
-        visit "/organization/#{@organization.id}"
+        visit "/organizations/#{@organization.id}"
         # Now test for functionality
         expect(page).to have_content(@organization.name)
         expect(page).to have_content(@organization.id)
@@ -29,12 +29,12 @@ RSpec.describe 'the organizations #show page' do
 # When I visit a parent's show page
 # I see a count of the number of children associated with this parent
     it 'displays a count of the number of fighters associated with this organization' do 
-        visit "/organization/#{@organization.id}"
+        visit "/organizations/#{@organization.id}"
         expect(page).to have_content(@organization.count_fighters)
     end 
 
     it 'has a link that takes the user to fighters index' do
-        visit "/organization/#{@organization.id}"
+        visit "/organizations/#{@organization.id}"
         click_on "Fighters"
         expect(current_path).to eq("/fighters")
     end
@@ -42,8 +42,8 @@ RSpec.describe 'the organizations #show page' do
 # When I visit a parent show page ('/organization/:id')
 # Then I see a link to take me to that organization's "organization/#{@organization.id}/fighters" page
     it 'has a link that takes the user to that organizations fighters page' do
-        visit "/organization/#{@organization.id}"
+        visit "/organizations/#{@organization.id}"
         click_on "List of fighters"
-        expect(current_path).to eq("/organization/#{@organization.id}/fighters")
-end
+        expect(current_path).to eq("/organizations/#{@organization.id}/fighters")
+    end
 end 
