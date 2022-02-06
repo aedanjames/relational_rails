@@ -17,7 +17,7 @@ RSpec.describe 'Organizations Index' do
     it 'displays organization names as links that can navigate to show path' do
         visit "/organizations"
         click_on @organization_1.name 
-        expect(current_path).to eq("/organization/#{@organization_1.id}")
+        expect(current_path).to eq("/organizations/#{@organization_1.id}")
     end
 # As a visitor
 # When I visit '/organizations',
