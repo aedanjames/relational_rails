@@ -1,6 +1,8 @@
 <h2><%= @fighter.name %></h2>
-<p>Height: <%= @fighter.height %>
-<p>Weight: <%= @fighter.weight %>
-<p>Reach: <%= @fighter.reach %>
-<p>Stance: <%= @fighter.stance %>
-<p>Actively fighting: <%= @fighter.active %>
+<p>Height: <%= @fighter.height %> meters</p>
+<p>Weight: <%= @fighter.weight %> lbs</p>
+<p>Reach: <%= @fighter.reach %> inches</p>
+<p>Stance: <%= @fighter.stance %></p>
+<p>Actively fighting: <%= @fighter.active %></p>
+
+<%= link_to "Update #{@fighter.name}", "/fighters/#{@fighter.id}/edit" %>
