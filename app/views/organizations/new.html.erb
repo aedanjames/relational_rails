@@ -1,0 +1,11 @@
+<%= form_with url: '/organizations', method: :post, local: :true do |form| %>
+    <p><%= form.label :name %></p>
+    <p><%= form.text_field :name %></p>
+    <p><%= form.label :year_founded %></p>
+    <p><%= form.text_field :year_founded %></p>
+    <p><%= form.label :president %></p>
+    <p><%= form.text_field :president %></p>
+    <p><%= form.label :international %></p>
+    <p><%= form.select :international, options_for_select([true, false]) %></p>
+    <p><%= form.submit "Create Organization" %>
+<% end %>
