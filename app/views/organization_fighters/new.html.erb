@@ -1,0 +1,15 @@
+<%= form_with url: "/organizations/#{@organization.id}/fighters", method: :post, local: :true do |form| %>
+<p><%= form.label :name %></p>
+<p><%= form.text_field :name %></p>
+<p><%= form.label :height %></p>
+<p><%= form.text_field :height%></p>
+<p><%= form.label :weight %></p>
+<p><%= form.text_field :weight %></p>
+<p><%= form.label :reach %></p>
+<p><%= form.text_field :reach %></p>
+<p><%= form.label :stance %></p>
+<p><%= form.select :stance, options_for_select(["southpaw", "orthodox", "switch"])%></p>
+<p><%= form.label :active %></p>
+<p><%= form.select :active, options_for_select([true, false])%></p> 
+<p><%= form.submit "Create Fighter" %></p>
+<% end %>

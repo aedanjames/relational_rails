@@ -17,14 +17,13 @@ RSpec.describe 'Organizations Index' do
     it 'displays organization names as links that can navigate to show path' do
         visit "/organizations"
         click_on @organization_1.name 
-        expect(current_path).to eq("/organization/#{@organization_1.id}")
+        expect(current_path).to eq("/organizations/#{@organization_1.id}")
     end
 # As a visitor
-# When I visit the parent index,
+# When I visit '/organizations',
 # I see that records are ordered by most recently created first
 # And next to each of the records I see when it was created
 
-# Working but need to figure out how to test for this. Tried and got stuck. Installed orderly gem 
     it 'displays organizations in order by most recently created' do 
         visit "/organizations"
         expect(@organization_2.name).to appear_before(@organization_1.name)
