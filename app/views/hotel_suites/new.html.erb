@@ -1,0 +1,9 @@
+<%= form_with url: "/hotels/#{@hotel.id}/suites", method: :post, local: :true do |form| %>
+<%= form.label :name %>
+<%= form.text_field :name %>
+<%= form.label :clean %>
+<%= form.select :clean, options_for_select([true, false])%>
+<%= form.label :number_of_beds %>
+<%= form.text_field :number_of_beds %>
+<%= form.submit "Create Suite" %>
+<% end %>
