@@ -21,12 +21,6 @@ class HotelsController < ApplicationController
     redirect_to "/hotels"
   end
 
-#Rails has a syntax called strong params: for pulling data from the params hash.
-private
-  def hotel_params
-    params.permit(:name, :five_stars, :year_founded)
-  end
-
   def edit
     @hotel = Hotel.find(params[:id])
   end
@@ -36,7 +30,8 @@ private
     hotel.update(hotel_params)
     redirect_to '/hotels'
   end
-
+#Rails has a syntax called strong params: for pulling data from the params hash.
+private
   def hotel_params
     params.permit(:name, :five_stars, :year_founded)
   end
