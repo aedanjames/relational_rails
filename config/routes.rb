@@ -22,4 +22,5 @@ Rails.application.routes.draw do
   get '/fighters', to:'fighters#index'
   get 'fighters/:id', to:'fighters#show'
   get 'fighters/:id/edit', to: 'fighters#edit'
+  patch 'fighters/:id', to: 'fighters#update'
 end
