@@ -32,11 +32,11 @@ class HotelsController < ApplicationController
 
   def update
     hotel = Hotel.find(params[:id])
-    hotel.update(artist_params)
+    hotel.update(hotel_params)
     redirect_to '/hotels'
   end
 
-  def artist_params
-    params.permit(:name)
+  def hotel_params
+    params.permit(:name, :five_stars, :year_founded)
   end
 end
