@@ -12,7 +12,7 @@ RSpec.describe 'index of suites of hotel' do
   end
 
   it 'each suite associated with a hotel' do
-    visit "/hotel/#{@hotel.id}/suites"
+    visit "/hotels/#{@hotel.id}/suites"
 
      expect(page).to have_content(@suite_1.name)
      expect(page).to have_content(@suite_2.name)
@@ -38,11 +38,27 @@ RSpec.describe 'index of suites of hotel' do
     suite_1 = Suite.create!(name: '123', clean: true, number_of_beds: 1, hotel_id: hotel.id)
     suite_2 = Suite.create!(name: '145', clean: true, number_of_beds: 2, hotel_id: hotel.id)
 
-        visit "/hotel/#{hotel.id}"
+        visit "/hotels/#{hotel.id}/suites"
 
-        save_and_open_page
         click_link 'Create Suite'
-        expect(current_path).to eq("/hotels/#{hotel.id}/new")
+        expect(current_path).to eq("/hotels/#{hotel.id}/suites/new")
+    end
 
+    it 'user fills out the form and a new suite is created' do
+      hotel = Hotel.create!(name: "Taj Mahal", five_stars: true, year_founded: 1930)
+      suite = Suite.create!(name: '111', clean: true, number_of_beds: 4, hotel_id: hotel.id)
+      suite_1 = Suite.create!(name: '123', clean: true, number_of_beds: 1, hotel_id: hotel.id)
+      suite_2 = Suite.create!(name: '145', clean: true, number_of_beds: 2, hotel_id: hotel.id)
+
+        visit "/hotels/#{hotel.id}/suites/new"
+
+        fill_in('name', with: "456")
+        # save_and_open_page
+        select "false", :from => "Clean"
+        fill_in('number_of_beds', with: "3")
+
+        click_button("Create Suite")
+        expect(current_path).to eq("/hotels/#{hotel.id}/suites")
+        expect(page).to have_content("456")
     end
 end
