@@ -24,4 +24,15 @@ RSpec.describe "Organization Fighter's Index" do
         click_link "Alphebetize Fighters"
         expect(@fighter_2.name).to appear_before(@fighter_1.name)
     end 
+
+    it 'has a button that can update a fighter' do 
+        visit "/organizations/#{@organization_1.id}/fighters"
+        expect(page).to have_content("Zelda")
+        expect(page).to have_no_content("Rocky")
+        click_button "Edit #{@fighter_1.name}"
+        fill_in 'name', with: "Rocky"
+        click_button "Update Fighter"
+        expect(current_path).to eq("/fighters/#{@fighter_1.id}")
+        expect(page).to have_content("Rocky")
+    end 
 end 
