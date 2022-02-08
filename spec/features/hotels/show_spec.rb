@@ -41,4 +41,5 @@ RSpec.describe 'the hotel show page' do
     click_on "All suites"
     expect(current_path).to eq("/hotel/#{@hotel.id}/suites")
   end
+
 end
