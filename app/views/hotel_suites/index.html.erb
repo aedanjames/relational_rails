@@ -5,4 +5,6 @@
 <h3>Room #<%= suite.name%></h3>
 <p> It is clean: <%= suite.clean%></p>
 <p> Number of beds: <%= suite.number_of_beds%></p>
+
 <%end%>
+<%= link_to "Create Suite", "/hotels/#{@hotel.id}/suites/new" %>

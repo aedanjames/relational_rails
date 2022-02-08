@@ -15,7 +15,7 @@ RSpec.describe 'Hotels Index' do
   it 'displays hotel names as link that navigate to a specific hotel' do
     visit "/hotels"
     click_on @hotel.name
-    expect(current_path).to eq("/hotel/#{@hotel.id}")
+    expect(current_path).to eq("/hotels/#{@hotel.id}")
   end
 
   # it 'displays the link at the top of the page' do
