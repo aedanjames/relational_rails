@@ -12,4 +12,8 @@ class Organization < ApplicationRecord
     def count_fighters
         Fighter.where(organization_id: self.id).count
     end
+
+    def self.alphabetical
+        Fighter.order(:name)
+    end 
 end

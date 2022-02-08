@@ -4,7 +4,7 @@ RSpec.describe Organization, type: :model do
     before :each do 
         @organization_1 = Organization.create!(name: "UFC", year_founded: 1995, president: "Dana White", international: true)
         @organization_2 = Organization.create!(name: "Bellator", year_founded: 2002, president: "Scott Coker", international: true)
-        @fighter_1 = @organization_1.fighters.create!(name: "Becky", height: 14.0, weight:120.0, reach: 36, stance: "orthodox", active: true)
+        @fighter_1 = @organization_1.fighters.create!(name: "Zelda", height: 14.0, weight:120.0, reach: 36, stance: "orthodox", active: true)
         @fighter_2 = @organization_1.fighters.create!(name: "Carlos Condit", height: 2.2, weight:170.0, reach: 70, stance: "orthodox", active: true)
     end 
 
@@ -27,6 +27,11 @@ RSpec.describe Organization, type: :model do
         it '#count_fighters' do 
             expect(@organization_1.count_fighters).to eq(2)
             expect(@organization_2.count_fighters).to eq(0)
+        end 
+
+        it '#alphabetical' do 
+            expect(Organization.first.fighters).to eq([@fighter_1, @fighter_2])
+            expect(Organization.alphabetical).to eq([@fighter_2, @fighter_1])
         end 
     end 
 end  
