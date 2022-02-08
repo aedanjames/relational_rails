@@ -23,4 +23,16 @@ RSpec.describe 'Fighters Show' do
         expect(page).to have_content(@fighter_2.stance)
         expect(page).to have_content(@fighter_2.active)
     end 
+
+    it 'has a button to update each fighter' do 
+        visit "/fighters/"
+        expect(page).to have_content("Becky")
+        expect(page).to have_no_content("Benistta")
+        click_button "Edit #{@fighter_1.name}"
+        expect(current_path).to eq("/fighters/#{@fighter_1.id}/edit")
+        fill_in 'name', with: "Benistta"
+        click_button "Update Fighter"
+        expect(current_path).to eq("/fighters/#{@fighter_1.id}")
+        expect(page).to have_content("Benistta")
+    end 
 end

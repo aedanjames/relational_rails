@@ -1,7 +1,7 @@
 <h1>All Fighters</h1>
 
 <% @fighters.is_active.each do |fighter| %>
-    <h3><%= link_to fighter.name, "/fighters/#{fighter.id}" %></h3>
+    <h3><%= link_to fighter.name, "/fighters/#{fighter.id}" %><%= button_to "Edit #{fighter.name}", "/fighters/#{fighter.id}/edit", method: :get %></h3>
     <p>Height: <%= fighter.height %> meters</p>
     <p>Weight: <%= fighter.weight %> lbs</p>
     <p>Reach: <%= fighter.reach %> inches</p>
