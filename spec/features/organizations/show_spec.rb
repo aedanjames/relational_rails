@@ -57,7 +57,7 @@ RSpec.describe 'the organizations #show page' do
         fill_in 'president', with: "Bam Bam"
         select "true", :from => "international"
         click_button "Update Organization"
-        expect(current_path).to eq("/organizations/#{organization.id}")
+        expect(current_path).to eq("/organizations/#{@organization.id}")
         expect(page).to have_content("Rollie Pollie")
     end 
 end 
