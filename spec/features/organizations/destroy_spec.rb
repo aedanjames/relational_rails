@@ -13,7 +13,7 @@ RSpec.describe 'Organization Delete' do
         visit "/organizations/#{@organization_1.id}/"
         expect(page).to have_content(@organization_1.name)
         click_button "Delete #{@organization_1.name}"
-        expect(current_path).to eq(/organizations/)
+        expect(current_path).to eq("/organizations/")
         expect(page).to have_no_content(@organization_1.name)
     end 
 end 

@@ -1,5 +1,5 @@
 class Organization < ApplicationRecord
-    has_many :fighters
+    has_many :fighters, dependent: :destroy
     validates_presence_of :name
     validates_presence_of :year_founded
     validates_presence_of :president
