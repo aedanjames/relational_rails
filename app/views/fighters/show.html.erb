@@ -1,8 +1,9 @@
 <h2><%= @fighter.name %></h2>
+<%= link_to "Update #{@fighter.name}", "/fighters/#{@fighter.id}/edit" %>
 <p>Height: <%= @fighter.height %> meters</p>
 <p>Weight: <%= @fighter.weight %> lbs</p>
 <p>Reach: <%= @fighter.reach %> inches</p>
 <p>Stance: <%= @fighter.stance %></p>
 <p>Actively fighting: <%= @fighter.active %></p>
 
-<%= link_to "Update #{@fighter.name}", "/fighters/#{@fighter.id}/edit" %>
+<%= button_to "Delete #{@fighter.name}", "/fighters/#{@fighter.id}", method: :delete %>
