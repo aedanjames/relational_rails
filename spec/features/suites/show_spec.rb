@@ -12,7 +12,7 @@ RSpec.describe 'the suites show page' do
   end
 
   it 'shows attributtes for one suite' do
-    visit "/suite/#{@suite.id}"
+    visit "/suites/#{@suite.id}"
     expect(page).to have_content(@suite.name)
     expect(page).to have_content(@suite.clean)
     expect(page).to have_content(@suite.number_of_beds)
