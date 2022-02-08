@@ -1,7 +1,11 @@
 class OrganizationFightersController < ApplicationController
     def index 
         @organization = Organization.find(params[:id])
-        @fighters = @organization.fighters
+        if params[:sort]
+            @fighters = @organization.alphabetical
+        else
+            @fighters = @organization.fighters
+        end
     end 
 
     def new
