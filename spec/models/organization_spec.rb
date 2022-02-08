@@ -30,8 +30,8 @@ RSpec.describe Organization, type: :model do
         end 
 
         it '#alphabetical' do 
-            expect(Organization.first.fighters).to eq([@fighter_1, @fighter_2])
-            expect(Organization.alphabetical).to eq([@fighter_2, @fighter_1])
+            expect(@organization_1.fighters).to eq([@fighter_1, @fighter_2])
+            expect(@organization_1.alphabetical).to eq([@fighter_2, @fighter_1])
         end 
     end 
 end  
