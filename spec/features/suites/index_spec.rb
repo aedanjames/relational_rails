@@ -28,11 +28,11 @@ RSpec.describe 'Suites Index' do
     visit "/suites"
 
     expect(page).to have_content("11")
-    # expect(page).to have_no_content("90000")
 
     click_button "Edit #{@suite.name}"
 
     expect(current_path).to eq("/suites/#{@suite.id}/edit")
+    
     fill_in 'name', with: "333"
     fill_in 'number_of_beds', with: "2"
     select "false", :from => "clean"
