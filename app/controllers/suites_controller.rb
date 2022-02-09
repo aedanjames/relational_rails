@@ -13,9 +13,15 @@ class SuitesController < ApplicationController
 
   def update
     suite = Suite.find(params[:id])
-    
     suite.update(suite_params)
+    redirect_to "/suites/#{suite.id}"
   end
+
+  def destroy
+    suite = Suite.find{params[:id]}
+    suite.delete
+    redirect_to "/suites"
+end
 
 private
   def suite_params

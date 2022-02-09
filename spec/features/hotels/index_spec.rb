@@ -44,7 +44,7 @@ RSpec.describe 'Hotels Index' do
     # a new parent record is created,
     # and I am redirected to the Hotel Index page where I see the new Hotel displayed.
 
-    it 'links to the new page from the artist index' do
+    it 'links to the new page from the hotels index' do
       visit '/hotels'
 
       first(:link, 'New Hotel').click
@@ -83,4 +83,23 @@ RSpec.describe 'Hotels Index' do
     expect(@suite_1.name).to appear_before(@suite_2.name)
   end
 
+  # As a visitor
+  # When I visit the hotel index page
+  # Next to every hotel, I see a link to edit thathotel's info
+  # When I click the link
+  # I should be taken to that hotels edit page where I can update its information just like in User Story 4
+
+  it 'has an edit button to edit a hotel' do
+    visit '/hotels/'
+    expect(page).to have_content("Taj Mahal")
+
+    # first(:link, "Edit #{@hotel.name}").click
+    page.has_button?("Edit #{@hotel.name}")
+    click_button("Edit #{@hotel.name}")
+    # click_button "Edit #{@hotel.name}"
+
+    expect(current_path).to eq("/hotels/#{@hotel.id}/edit")
+    
+
+  end
 end

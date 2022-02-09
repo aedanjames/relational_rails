@@ -7,3 +7,4 @@
 <p>Number of suites: <%=@hotel.suite_count%></p>
 
 <p><%= link_to "All suites", "/hotels/#{@hotel.id}/suites"%></p>
+<%= button_to "Delete #{@hotel.name}", "/hotels/#{@hotel.id}", method: :delete %>

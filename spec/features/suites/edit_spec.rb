@@ -16,8 +16,7 @@ RSpec.describe 'Update Suite' do
 
 
     visit "/suites/#{suite.id}"
-
-    click_link('Update Suite')
+    click_link "Edit #{suite.name}"
     expect(current_path).to eq("/suites/#{suite.id}/edit")
 
   end
@@ -30,13 +29,15 @@ RSpec.describe 'Update Suite' do
     visit "/suites/#{suite.id}/edit"
 
     fill_in "Name", with: "678"
-    fill_in "Clean", with: "true"
+    select "false", :from => "clean"
     fill_in "Number of beds", with: "4"
+
     click_button "Update Suite"
+
     expect(current_path).to eq("/suites/#{suite.id}")
     suite.reload
     expect(suite.name).to eq("678")
-    expect(suite.clean).to eq(true)
+    expect(suite.clean).to eq(false)
     expect(suite.number_of_beds).to eq(4)
 
   end
