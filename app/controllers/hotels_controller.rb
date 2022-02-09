@@ -30,6 +30,13 @@ class HotelsController < ApplicationController
     hotel.update(hotel_params)
     redirect_to '/hotels'
   end
+
+  def destroy
+    # hotel = Hotel.find(params[:id])
+    # hotel.destroy
+    Hotel.destroy(params[:id])
+    redirect_to "/hotels"
+  end
 #Rails has a syntax called strong params: for pulling data from the params hash.
 private
   def hotel_params

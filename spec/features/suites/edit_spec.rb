@@ -16,10 +16,16 @@ RSpec.describe 'Update Suite' do
 
 
     visit "/suites/#{suite.id}"
-
-    click_link('Update Suite')
+    click_button "Edit #{suite.name}"
     expect(current_path).to eq("/suites/#{suite.id}/edit")
 
+    fill_in "Name", with: "Four Seasons"
+    fill_in "Number of beds", with: 1
+    fill_in "Clean", with: "true"
+    # first(:link, 'Update Suite').click
+    click_button('Update Suite')
+    expect(current_path).to eq("/suites/#{suite.id}")
+    expect(page).to have_content("Four Seasons")
   end
 
   it 'redirects to Suite Show page where suite has updated information' do

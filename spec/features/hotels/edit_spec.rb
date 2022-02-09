@@ -21,7 +21,7 @@ require 'rails_helper'
   end
 
   it 'can edit the hotel' do
-    hotel = Hotel.create!(name: 'Four S', five_stars:true, year_founded: 999)
+    hotel = Hotel.create!(name: 'Four S', year_founded: 999, five_stars:true)
 
     visit "/hotels"
 
@@ -29,8 +29,9 @@ require 'rails_helper'
 
     click_button 'Edit Four S'
     fill_in 'name', with: 'Four Seasons'
-    fill_in 'five_stars', with: 'true'
     fill_in 'year_founded', with: '1999'
+    select "true", :from => "five_stars"
+
     click_button 'Update Hotel'
 
     expect(current_path).to eq("/hotels")

@@ -1,9 +1,9 @@
 <%= form_with url: "/hotels/#{@hotel.id}", method: :patch, local: true do |form| %>
-<%= form.label :name %>
-<%= form.text_field :name %>
-<%= form.label :five_stars %>
-<%= form.text_field :five_stars %>
-<%= form.label :year_founded %>
-<%= form.text_field :year_founded %>
-<%= form.submit 'Update Hotel'%>
+<p><%= form.label :name %></p>
+<p><%= form.text_field :name %></p> <br>
+<p><%= form.label :year_founded %></p>
+<p><%= form.text_field :year_founded %></p><br>
+<p><%= form.label :five_stars %></p>
+<p><%= form.select :five_stars, options_for_select([true, false]) %></p><br>
+<p><%= form.submit 'Update Hotel'%></p>
 <%end%>

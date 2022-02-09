@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   post '/hotels/:id/suites', to: 'hotel_suites#create'
   get 'suites/:id/edit', to: 'suites#edit'
   patch 'suites/:id', to: 'suites#update'
+  delete '/hotels/:id', to: 'hotels#destroy'
+  delete '/suites/:id', to: 'suites#destroy'
+
 
   patch '/organizations/:id', to: 'organizations#update'
   post '/organizations/', to: 'organizations#create'

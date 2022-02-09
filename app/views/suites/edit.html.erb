@@ -1,9 +1,9 @@
 <%= form_with url: "/suites/#{@suite.id}", method: :patch, local: true do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-  <%= form.label :clean %>
-  <%= form.text_field :clean %>
-  <%= form.label :number_of_beds %>
-  <%= form.text_field :number_of_beds %>
-  <%= form.submit "Update Suite" %>
+  <p><%= form.label :name %></p>
+  <p><%= form.text_field :name %></p>
+  <p><%= form.label :clean %></p>
+  <p><%= form.text_field :clean %></p>
+  <p><%= form.label :number_of_beds %></p>
+  <p><%= form.text_field :number_of_beds %></p>
+  <p><%= form.submit "Update Suite" %></p>
 <% end%>
