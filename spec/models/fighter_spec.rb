@@ -13,7 +13,7 @@ RSpec.describe Fighter, type: :model do
         it {should validate_presence_of :weight}
         it {should validate_presence_of :reach}
         it {should validate_presence_of :stance}
-        # it {should validate_presence_of :active}
+        it {should validate_inclusion_of(:active).in_array([true,false])}
     end 
     describe 'relationship' do 
         it {should belong_to :organization}

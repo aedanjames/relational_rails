@@ -12,7 +12,7 @@ RSpec.describe Organization, type: :model do
         it {should validate_presence_of :name}
         it {should validate_presence_of :year_founded}
         it {should validate_presence_of :president}
-        # it {should validate_presence_of :international}
+        it {should validate_inclusion_of(:international).in_array([true,false])}
     end 
     
     describe 'relationship' do 

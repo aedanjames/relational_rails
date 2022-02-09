@@ -3,6 +3,7 @@ class Organization < ApplicationRecord
     validates_presence_of :name
     validates_presence_of :year_founded
     validates_presence_of :president
+    validates :international, inclusion: [true, false]
 
     def self.in_order
         order(created_at: :desc)
