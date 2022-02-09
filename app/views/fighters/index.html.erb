@@ -1,4 +1,4 @@
-<h1>All Fighters</h1>
+<center><h1>All Fighters</h1></center>
 
 <% @fighters.is_active.each do |fighter| %>
     <h3><%= link_to fighter.name, "/fighters/#{fighter.id}" %><%= button_to "Edit #{fighter.name}", "/fighters/#{fighter.id}/edit", method: :get %></h3>

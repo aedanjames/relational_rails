@@ -1,6 +1,13 @@
-<h1>Organization Fighters Index</h1>
-<%= link_to "Alphebetize Fighters", "/organizations/#{@organization.id}/fighters?sort=asc" %>
-<h2><%= @organization.name %></h2> 
+<center><h1>Organization Fighters Index</h1></center>
+<center><h2><%= @organization.name %></h2></center>
+<p><%= link_to "Alphebetize Fighters", "/organizations/#{@organization.id}/fighters?sort=asc" %></p>
+
+<%= form_with url: "/organizations/#{@organization.id}/fighters", method: :get, local: :true do |form| %>
+<%= form.label :reach, "Only return fighters with reach greater than" %>
+<%= form.text_field :reach %><%= "inches" %>
+    <%= form.submit 'Filter' %>
+<% end %>
+
 <% @fighters.each do |fighter| %> 
     <h3><%= fighter.name %><%= button_to "Edit #{fighter.name}", "/fighters/#{fighter.id}/edit", method: :get %></h3>
     <p>Height: <%= fighter.height %> meters</p>
@@ -10,8 +17,3 @@
 
 <p><%= link_to "Create Fighter", "/organizations/#{@organization.id}/fighters/new" %></p>
 
-<%= form_with url: "/organizations/#{@organization.id}/fighters", method: :get, local: :true do |form| %>
-    <%= form.label :reach, "Only return fighters with reach greater than" %>
-    <%= form.text_field :reach %><%= "inches" %>
-    <%= form.submit 'Filter' %>
-<% end %>
