@@ -11,4 +11,8 @@ class Hotel < ApplicationRecord
    def suite_count
      Suite.where(hotel_id: self.id).count
    end
+
+   def alphabetical
+     suites.order(:name)
+   end
 end

@@ -5,6 +5,8 @@ require 'rails_helper'
 RSpec.describe 'Hotels Index' do
   before :each do
     @hotel = Hotel.create!(name: "Taj Mahal", five_stars: true, year_founded: 1930)
+    @suite_2 = Suite.create!(name: 'two', clean: false, number_of_beds: 2, hotel_id: @hotel.id)
+    @suite_1 = Suite.create!(name: 'one', clean:false, number_of_beds: 1, hotel_id: @hotel.id)
   end
 
   it 'displays the name of each hotel' do
@@ -14,7 +16,9 @@ RSpec.describe 'Hotels Index' do
 
   it 'displays hotel names as link that navigate to a specific hotel' do
     visit "/hotels"
-    click_on @hotel.name
+    first(:link, @hotel.name).click
+    # click_on @hotel.name
+    # hotel.reload
     expect(current_path).to eq("/hotels/#{@hotel.id}")
   end
 
@@ -43,7 +47,8 @@ RSpec.describe 'Hotels Index' do
     it 'links to the new page from the artist index' do
       visit '/hotels'
 
-      click_link('New Hotel')
+      first(:link, 'New Hotel').click
+      # click_link('New Hotel')
       expect(current_path).to eq('/hotels/new')
     end
 
@@ -59,5 +64,23 @@ RSpec.describe 'Hotels Index' do
       expect(current_path).to eq("/hotels")
       expect(page).to have_content("Hilton")
     end
+
+# As a visitor
+# When I visit the Hotel's Suites Index Page
+# Then I see a link to sort suites in alphabetical order
+# When I click on the link
+# I'm taken back to the Hotel's Suites Index Page where I see all of the hotel's suites in alphabetical order
+
+  it 'goes back to the Hotels Suites Index Page where I see all of the hotels suites in alphabetical order' do
+
+    visit "hotels/#{@hotel.id}/suites"
+
+    expect(@suite_2.name).to appear_before(@suite_1.name)
+
+    # first(:link, "Suites in alphabetical order").click
+    click_link "Suites in alphabetical order"
+
+    expect(@suite_1.name).to appear_before(@suite_2.name)
+  end
 
 end
