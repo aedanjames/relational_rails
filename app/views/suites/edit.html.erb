@@ -2,7 +2,7 @@
   <p><%= form.label :name %></p>
   <p><%= form.text_field :name %></p>
   <p><%= form.label :clean %></p>
-  <p><%= form.text_field :clean %></p>
+  <p><%= form.select :clean, options_for_select([true, false]) %></p>
   <p><%= form.label :number_of_beds %></p>
   <p><%= form.text_field :number_of_beds %></p>
   <p><%= form.submit "Update Suite" %></p>
