@@ -1,11 +1,11 @@
 <h1><%= @organization.name %></h1>
 <%= link_to "List of fighters", "/organizations/#{@organization.id}/fighters" %>
 <p>id: <%= @organization.id %></p>
-<p>created_at: <%= @organization.created_at %></p>
-<p>updated at: <%= @organization.updated_at %></p>
-<p>year founded: <%= @organization.year_founded %></p>
-<p>president: <%= @organization.president %></p>
-<p>international?: <%= @organization.international %></p>
+<p>Created At: <%= @organization.created_at %></p>
+<p>Updated At: <%= @organization.updated_at %></p>
+<p>Year Founded: <%= @organization.year_founded %></p>
+<p>President: <%= @organization.president %></p>
+<p>International Events: <%= @organization.international %></p>
 <p>Number of Fighters: <%= @organization.count_fighters %></p>
 
 <%= button_to "Edit #{@organization.name}", "/organizations/#{@organization.id}/edit", method: :get %>
