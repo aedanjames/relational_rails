@@ -10,3 +10,11 @@
 <%= link_to "Create Suite", "/hotels/#{@hotel.id}/suites/new" %>
 
 <p><%= link_to "Suites in alphabetical order", "/hotels/#{@hotel.id}/suites?sort=asc" %></p>
+
+
+<%= form_with url: "/hotels/#{@hotel.id}/suites", method: :get, local: :true do |form| %>
+<p><%= form.label :room_count, "Only return suites with more than" %></p>
+<p><%= form.text_field :room_count %></p> <br>
+
+<p><%= form.submit 'Filter' %></p>
+<%end%>
