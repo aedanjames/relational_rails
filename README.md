@@ -28,11 +28,16 @@ The application allows users to navigate a website, utilizing CRUD functionality
 | Pry         | Github        | Git           | Orderly       |
 
 ## How to Use 
-**Fork this repository** [Relational Rails](https://github.com/aedanjames/relational_rails)
-**Clone your forked repository from your command line** '$git clone #copied_url'
-**Navigate into relational_rails directory** '$cd relational_rails'
-**Create, Migrate and Seed databse** '$rails db:{create, migrate, seed}
-**Run rails server** '$rails s'
+**Fork this repository** [Relational Rails](https://github.com/aedanjames/relational_rails).   
+
+**Clone your forked repository from your command line** '$git clone #copied_url'.   
+
+**Navigate into relational_rails directory** '$cd relational_rails'.   
+
+**Create, Migrate and Seed databse** '$rails db:{create, migrate, seed}.   
+
+**Run rails server** '$rails s'.   
+
 **Open web browser and navigate to URL [localhost:3000](http://localhost:3000)**
 
 ## Contributors 
