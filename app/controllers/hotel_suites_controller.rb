@@ -1,7 +1,12 @@
 class HotelSuitesController < ApplicationController
   def index
     @hotel = Hotel.find(params[:id])
-    @suites = @hotel.suites
+  
+    if params[:sort]
+      @suites = @hotel.alphabetical
+    else
+      @suites = @hotel.suites
+    end
   end
 
   def new
