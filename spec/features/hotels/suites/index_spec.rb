@@ -61,4 +61,25 @@ RSpec.describe 'index of suites of hotel' do
         expect(current_path).to eq("/hotels/#{hotel.id}/suites")
         expect(page).to have_content("456")
     end
+
+# As a visitor
+# When I visit the Hotel's Suite Index Page
+# I see a form that allows me to input a number value
+# When I input a number value and click the submit button that reads 'Only return records with more than `number` of `column_name`'
+# Then I am brought back to the current index page with only the records that meet that threshold shown.
+
+  it 'allows a user to filter rooms greater than a given number' do
+
+    visit "/hotels/#{@hotel.id}/suites"
+
+    expect(page).to have_content(@suite_2.name)
+
+    fill_in "Only return suites with more than", with: "2"
+
+    click_button "Filter"
+    expect(current_path).to eq("/hotels/#{@hotel.id}/suites")
+    expect(page).to have_content(@suite_1.name)
+    expect(page).to have_no_content(@suite_2.name)
+
+  end
 end

@@ -31,6 +31,15 @@ RSpec.describe Hotel do
 
         expect(hotel_1.alphabetical).to eq([suite_2, suite_3, suite_1])
       end
+
+      it '#room_filter' do
+        hotel_1 = Hotel.create!(name: "Taj Mahal", five_stars: true, year_founded: 1930)
+        suite_1 = Suite.create!(name: 'presidential', clean: true, number_of_beds: 4, hotel_id: hotel_1.id)
+        suite_2 = Suite.create!(name: 'economy', clean: true, number_of_beds: 1, hotel_id: hotel_1.id)
+        suite_3 = Suite.create!(name: 'honeymoon', clean: true, number_of_beds: 2, hotel_id: hotel_1.id)
+
+        expect(hotel_1.room_filter(2)).to eq([suite_1])
+      end
     end
 
 
