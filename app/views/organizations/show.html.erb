@@ -9,4 +9,5 @@
 <p>Number of Fighters: <%= @organization.count_fighters %></p>
 
 <%= button_to "Edit #{@organization.name}", "/organizations/#{@organization.id}/edit", method: :get %>
+<%= button_to "Delete #{@organization.name}", "/organizations/#{@organization.id}", method: :delete %>
 

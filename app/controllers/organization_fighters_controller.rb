@@ -3,6 +3,8 @@ class OrganizationFightersController < ApplicationController
         @organization = Organization.find(params[:id])
         if params[:sort]
             @fighters = @organization.alphabetical
+        elsif params[:reach]
+            @fighters = @organization.reach_filter(params[:reach])
         else
             @fighters = @organization.fighters
         end

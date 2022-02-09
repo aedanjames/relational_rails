@@ -25,9 +25,11 @@ Rails.application.routes.draw do
   get '/organizations/:id/fighters', to: 'organization_fighters#index'
   get '/organizations/:id/fighters/new', to: 'organization_fighters#new'
   post '/organizations/:id/fighters', to: 'organization_fighters#create'
+  delete '/organizations/:id', to: 'organizations#destroy'
 
   get '/fighters', to:'fighters#index'
   get 'fighters/:id', to:'fighters#show'
   get 'fighters/:id/edit', to: 'fighters#edit'
   patch 'fighters/:id', to: 'fighters#update'
+  delete '/fighters/:id', to: 'fighters#destroy'
 end

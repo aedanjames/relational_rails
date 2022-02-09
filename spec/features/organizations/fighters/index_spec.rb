@@ -13,7 +13,7 @@ RSpec.describe "Organization Fighter's Index" do
     end
 
     it 'displays each fighter that belongs to an organization' do 
-        visit "organizations/#{@organization_1.id}/fighters" 
+        visit "/organizations/#{@organization_1.id}/fighters"
         expect(page).to have_content(@fighter_1.name)
         expect(page).to have_content(@fighter_2.name)
     end
@@ -35,4 +35,15 @@ RSpec.describe "Organization Fighter's Index" do
         expect(current_path).to eq("/fighters/#{@fighter_1.id}")
         expect(page).to have_content("Rocky")
     end 
+
+    it 'has a form that allows a user to filter results to fighters with :reach > input' do 
+        visit "/organizations/#{@organization_1.id}/fighters"
+        expect(page).to have_content(@fighter_1.name)
+        expect(page).to have_content(@fighter_2.name)
+        fill_in "Only return fighters with reach greater than", with: "50" 
+        click_button "Filter"
+        expect(current_path).to eq("/organizations/#{@organization_1.id}/fighters")
+        expect(page).to have_content(@fighter_2.name)
+        expect(page).to have_no_content(@fighter_1.name)
+    end
 end 

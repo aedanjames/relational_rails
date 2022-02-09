@@ -6,6 +6,12 @@
     <p>Height: <%= fighter.height %> meters</p>
     <p>Weight: <%= fighter.weight %> lbs</p>
     <p>Reach: <%= fighter.reach %> inches</p>
-    <% end %>
+<% end %>
 
-<%= link_to "Create Fighter", "/organizations/#{@organization.id}/fighters/new" %>
+<p><%= link_to "Create Fighter", "/organizations/#{@organization.id}/fighters/new" %></p>
+
+<%= form_with url: "/organizations/#{@organization.id}/fighters", method: :get, local: :true do |form| %>
+    <%= form.label :reach, "Only return fighters with reach greater than" %>
+    <%= form.text_field :reach %><%= "inches" %>
+    <%= form.submit 'Filter' %>
+<% end %>
