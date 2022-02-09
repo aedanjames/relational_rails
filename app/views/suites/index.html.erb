@@ -1,6 +1,6 @@
 <h1>All Suites</h1>
 
-<% @suites.each do |suite| %>
+<% @suites.is_clean.each do |suite| %>
 <h3>Room #<%= link_to suite.name, "/suites/#{suite.id}" %></h3>
 <p> It is clean: <%= suite.clean %></p>
 <p> Number of beds: <%= suite.number_of_beds %></p>
