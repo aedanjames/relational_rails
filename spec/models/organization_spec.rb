@@ -12,18 +12,20 @@ RSpec.describe Organization, type: :model do
         it {should validate_presence_of :name}
         it {should validate_presence_of :year_founded}
         it {should validate_presence_of :president}
-        # it {should validate_presence_of :international}
+        it {should validate_inclusion_of(:international).in_array([true,false])}
     end 
     
     describe 'relationship' do 
         it {should have_many :fighters}
     end 
 
-    describe 'instance method' do 
+    describe 'class method' do 
         it '#self.in order' do 
             expect(Organization.in_order).to eq([@organization_2, @organization_1])
         end
-
+    end 
+    
+    describe 'instance method' do 
         it '#count_fighters' do 
             expect(@organization_1.count_fighters).to eq(2)
             expect(@organization_2.count_fighters).to eq(0)
