@@ -1,9 +1,5 @@
 require 'rails_helper'
 
-# As a visitor
-# When I visit '/fighters'
-# Then I see each fighter in the system including the fighter's attributes
-
 RSpec.describe 'Fighters Index' do 
     before :each do 
         @organization = Organization.create!(name: "UFC", year_founded: 1995, president: "Dana White", international: true)
@@ -30,5 +26,13 @@ RSpec.describe 'Fighters Index' do
         expect(page).to have_content(@fighter_1.name)
         expect(page).to have_no_content(@fighter_2.name)
         expect(page).to have_no_content(@fighter_3.name)
+    end 
+
+    it 'has a button that the deletes a fighter' do 
+        visit '/fighters'
+        expect(page).to have_content(@fighter_1.name)
+        click_button "Delete #{@fighter_1.name}"
+        expect(current_path).to eq("/fighters/")
+        expect(page).to have_no_content(@fighter_1.name)
     end 
 end 

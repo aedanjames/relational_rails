@@ -1,7 +1,5 @@
 require 'rails_helper'
-# As a visitor
-# When I visit '/organizations' 
-# Then I see the name of each organization record in the system
+
 RSpec.describe 'Organizations Index' do 
     before :each do 
         @organization_1 = Organization.create!(name: "Punchy Punch", year_founded: 1995, president: "Dana White", international: true)
@@ -19,10 +17,6 @@ RSpec.describe 'Organizations Index' do
         click_on @organization_1.name 
         expect(current_path).to eq("/organizations/#{@organization_1.id}")
     end
-# As a visitor
-# When I visit '/organizations',
-# I see that records are ordered by most recently created first
-# And next to each of the records I see when it was created
 
     it 'displays organizations in order by most recently created' do 
         visit "/organizations"
@@ -34,4 +28,12 @@ RSpec.describe 'Organizations Index' do
         click_on "Fighters"
         expect(current_path).to eq("/fighters")
     end
+
+    it 'has a button to delete an organization' do 
+        visit "/organizations"
+        expect(page).to have_content("#{@organization_1.name}")
+        click_on "Delete #{@organization_1.name}"
+        expect(current_path).to eq("/organizations/")
+        expect(page).to have_no_content("#{@organization_1.name}")
+    end 
 end 

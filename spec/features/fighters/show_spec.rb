@@ -1,8 +1,4 @@
 require 'rails_helper'
-# As a visitor
-# When I visit '/fighter/:id'
-# Then I see the fighter with that id including the fighter's attributes:
-
 
 RSpec.describe 'Fighters Show' do 
     before :each do 

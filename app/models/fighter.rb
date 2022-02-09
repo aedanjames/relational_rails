@@ -5,9 +5,9 @@ class Fighter < ApplicationRecord
     validates_presence_of :weight
     validates_presence_of :reach
     validates_presence_of :stance
-    # validates_presence_of :active
+    validates :active, inclusion: [true, false]
 
     def self.is_active 
-        self.where(active: true)
+        where(active: true)
     end 
 end 

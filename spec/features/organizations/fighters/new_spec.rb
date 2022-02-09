@@ -1,14 +1,5 @@
 require 'rails_helper'
-# As a visitor
-# When I visit a Organization Fighters Index page
-# Then I see a link to add a new adoptable fighter for that parent "Create Fighter"
-# When I click the link
-# I am taken to '/organizations/:organization_id/fighters/new' where I see a form to add a new adoptable child
-# When I fill in the form with the child's attributes:
-# And I click the button "Create Child"
-# Then a `POST` request is sent to '/organizations/@organization.id/fighters',
-# a new child object/row is created for that parent,
-# and I am redirected to the Parent Childs Index page where I can see the new child listed
+
 RSpec.describe 'Fighter creation' do 
     it 'can send the user to a page where a fighter can be created' do
         organization = Organization.create!(name: "Smellator", year_founded: 1995, president: "Drake Droog", international: true)
