@@ -34,4 +34,12 @@ RSpec.describe 'Organizations Index' do
         click_on "Fighters"
         expect(current_path).to eq("/fighters")
     end
+
+    it 'has a button to delete an organization' do 
+        visit "/organizations"
+        expect(page).to have_content("#{@organization_1.name}")
+        click_on "Delete #{@organization_1.name}"
+        expect(current_path).to eq("/organizations/")
+        expect(page).to have_no_content("#{@organization_1.name}")
+    end 
 end 

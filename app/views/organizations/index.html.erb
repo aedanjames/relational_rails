@@ -2,6 +2,7 @@
 
 <% @organizations.in_order.each do |organization| %>
     <h2><%= link_to organization.name, "/organizations/#{organization.id}" %><%= button_to "Edit #{organization.name}", "/organizations/#{organization.id}/edit", method: :get %></h2>
+    <%= button_to "Delete #{organization.name}", "/organizations/#{organization.id}", method: :delete %>
     <p>Created at: <%= organization.created_at %></p>
 <% end %>
 
