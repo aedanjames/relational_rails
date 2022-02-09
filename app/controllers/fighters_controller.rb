@@ -17,6 +17,12 @@ class FightersController < ApplicationController
         redirect_to "/fighters/#{fighter.id}"
     end 
 
+    def destroy 
+        fighter = Fighter.find{params[:id]}
+        fighter.delete
+        redirect_to "/fighters/"
+    end 
+
 private
     def fighters_params
         params.permit(:name, :height, :weight, :reach, :stance, :active)

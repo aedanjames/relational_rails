@@ -26,6 +26,12 @@ class OrganizationsController < ApplicationController
         redirect_to "/organizations/#{organization.id}"
     end 
 
+    def destroy 
+        organization = Organization.find(params[:id])
+        organization.destroy
+        redirect_to "/organizations/"
+    end 
+
 private
     def organization_params
         params.permit(:name, :year_founded, :president, :international)
