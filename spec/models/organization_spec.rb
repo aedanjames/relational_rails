@@ -19,11 +19,13 @@ RSpec.describe Organization, type: :model do
         it {should have_many :fighters}
     end 
 
-    describe 'instance method' do 
+    describe 'class method' do 
         it '#self.in order' do 
             expect(Organization.in_order).to eq([@organization_2, @organization_1])
         end
-
+    end 
+    
+    describe 'instance method' do 
         it '#count_fighters' do 
             expect(@organization_1.count_fighters).to eq(2)
             expect(@organization_2.count_fighters).to eq(0)

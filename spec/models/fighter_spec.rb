@@ -19,7 +19,7 @@ RSpec.describe Fighter, type: :model do
         it {should belong_to :organization}
     end 
 
-    describe 'instance method' do 
+    describe 'class method' do 
         it '#is_active' do 
         expect(Fighter.all).to eq([@fighter_1, @fighter_2])
         expect(Fighter.is_active).to eq([@fighter_1])

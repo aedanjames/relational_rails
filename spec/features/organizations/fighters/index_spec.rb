@@ -1,9 +1,5 @@
 require 'rails_helper'
 
-# As a visitor
-# When I visit '/organization/:id/fighters'
-# Then I see each fighter that is associated with that organization with each fighter's attributes:
-
 RSpec.describe "Organization Fighter's Index" do 
     before :each do 
         @organization_1 = Organization.create!(name: "UFC", year_founded: 1995, president: "Dana White", international: true)
