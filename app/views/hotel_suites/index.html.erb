@@ -8,3 +8,5 @@
 
 <%end%>
 <%= link_to "Create Suite", "/hotels/#{@hotel.id}/suites/new" %>
+
+<p><%= link_to "Suites in alphabetical order", "/hotels/#{@hotel.id}/suites?sort=asc" %></p>
