@@ -2,6 +2,6 @@
 <p>It is clean: <%=@suite.clean%></p>
 <p>Number of Beds: <%=@suite.number_of_beds%></p>
 
-<%= button_to "Edit #{@suite.name}", "/suites/#{@suite.id}/edit", method: :get %>
-<br><br><br>
+<%= link_to "Edit #{@suite.name}", "/suites/#{@suite.id}/edit"%>
+
 <%= button_to "Delete #{@suite.name}", "/suites/#{@suite.id}", method: :delete %>
