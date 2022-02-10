@@ -1,9 +1,9 @@
-<%= form_with url: '/hotels', method: :post, local: true do |form| %>
-<%= form.label :name %>
-<%= form.text_field :name %>
-<%= form.label :five_stars %>
-<%= form.text_field :five_stars %>
-<%= form.label :year_founded %>
-<%= form.text_field :year_founded %>
-<%= form.submit "Create Hotel" %>
-<% end%>
+<p><%= form_with url: '/hotels', method: :post, local: true do |form| %></p>
+<p><%= form.label :name %></p>
+<p><%= form.text_field :name %></p>
+<p><%= form.label :five_stars %></p>
+<p><%= form.text_field :five_stars %></p>
+<p><%= form.label :year_founded %></p>
+<p><%= form.text_field :year_founded %></p>
+<p><%= form.submit "Create Hotel" %></p>
+<p><% end%>

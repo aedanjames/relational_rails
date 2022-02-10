@@ -15,4 +15,8 @@ class Hotel < ApplicationRecord
    def alphabetical
      suites.order(:name)
    end
+
+   def room_filter(room_count)
+     suites.where("number_of_beds > ?", room_count)
+   end
 end

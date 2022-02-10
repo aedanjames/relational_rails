@@ -1,9 +1,11 @@
 class HotelSuitesController < ApplicationController
   def index
     @hotel = Hotel.find(params[:id])
-  
+
     if params[:sort]
       @suites = @hotel.alphabetical
+    elsif params[:room_count]
+      @suites = @hotel.room_filter(params[:room_count])
     else
       @suites = @hotel.suites
     end

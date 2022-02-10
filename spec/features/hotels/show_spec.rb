@@ -1,9 +1,4 @@
 require 'rails_helper'
-# As a visitor
-# When I visit '/hotel/:id'
-# Then I see the hotel with that id including the hotel's attributes:
-# - data from each column that is on the hotel table
-# When link from ‘/hotel’ is clicked, navigate to ‘/parents/:id
 
 RSpec.describe 'the hotel show page' do
   before :each do
@@ -23,19 +18,11 @@ RSpec.describe 'the hotel show page' do
     expect(page).to have_content(@hotel.year_founded)
   end
 
-# As a visitor
-# When I visit a hotel's show page
-# I see a count of the number of suites associated with this hotel
-
-#This test passed however there was nothing included in view. We dont know why.
   it 'displays count of suites associated with hotel' do
     visit "/hotels/#{@hotel.id}"
     expect(page).to have_content(@hotel.suite_count)
   end
 
-# As a visitor
-# When I visit a parent show page ('/hotel/:id')
-# Then I see a link to take me to that hotel's `Suites` page ('/hotel/:id/suites')
   it 'has a link to take me to all the suites that hotel has' do
     visit "/hotels/#{@hotel.id}"
     click_on "All suites"

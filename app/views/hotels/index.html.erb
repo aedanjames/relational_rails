@@ -1,9 +1,8 @@
-<h1>All hotels</h1>
+<center><h1>Hotels</h1></center>
+<center><%= link_to "New Hotel", '/hotels/new' %></center>
 
 <% @hotels.in_order.each do |hotel| %>
     <h3><%= link_to hotel.name, "/hotels/#{hotel.id}"%> <br> <%= button_to "Edit #{hotel.name}", "/hotels/#{hotel.id}/edit", method: :get %></h3>
     <p> Created at: <%= hotel.created_at%></p>
-
-  <%= link_to "New Hotel", '/hotels/new' %>
-
+    <p> <%= button_to "Delete #{hotel.name}", "/hotels/#{hotel.id}/", method: :delete %>
 <% end %>
