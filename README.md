@@ -43,6 +43,8 @@ The application allows users to navigate a website, utilizing CRUD functionality
 ## Contributors 
 👤 **Becky Nisttahuz** (Hotels/Suites)
 - [GitHub](https://github.com/benistta)
+- [LinkedIn](https://www.linkedin.com/in/becky-nisttahuz-3926a9227/)
 
 👤 **Aedan Yturralde** (Organizations/Fighters)
 - [GitHub](https://github.com/aedanjames)
+- [LinkedIn](https://www.linkedin.com/in/aedan-y/)
