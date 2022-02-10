@@ -1,9 +1,10 @@
-<h1>All Suites</h1>
+<center><h1>All Suites</h1></center>
 
 <% @suites.is_clean.each do |suite| %>
-<h3>Room #<%= link_to suite.name, "/suites/#{suite.id}" %><%= button_to "Edit #{suite.name}", "/suites/#{suite.id}/edit", method: :get %></h3>
+<h3>Room #<%= link_to suite.name, "/suites/#{suite.id}/" %><%= button_to "Edit #{suite.name}", "/suites/#{suite.id}/edit", method: :get %></h3>
 <p> It is clean: <%= suite.clean %> </p>
 <p> Number of beds: <%= suite.number_of_beds %></p>
 
+<%= button_to "Delete #{suite.name}", "/suites/#{suite.id}/", method: :delete %>
 
 <%end%>
